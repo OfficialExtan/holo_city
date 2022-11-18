@@ -20,6 +20,9 @@ I recommend these sites and tutorials if you want to know more:
 - [YouTube Tutorial Series by TopHATTwaffle](https://youtube.com/playlist?list=PL-454Fe3dQH1L38FnKkz_O1CqYx6sKaXk)
 - [A very powerful VScript library I used for this project](https://github.com/samisalreadytaken/vs_library)
 
+## Video Demo
+[YouTube](https://www.youtube.com/watch?v=0QpWfAvWDVk)
+
 ## Screenshots
 ![overview](https://i.imgur.com/ii0okW2.png)
 
