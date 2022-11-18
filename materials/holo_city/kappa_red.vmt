@@ -1,0 +1,6 @@
+"UnlitTwoTexture"
+{
+	"$basetexture" "holo_city/player_red_small"
+	"$texture2"	"holo_city/kappa"
+	"$translucent" "1"
+}

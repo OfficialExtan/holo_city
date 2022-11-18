@@ -1,0 +1,83 @@
+"UnlitTwoTexture"
+{
+	"$basetexture" "holo_city/energy_shield_gradient"
+	"$texture2"	"models/props_combine/combinescanline"
+	"$translucent" "1"
+	"$nocull" "1"
+	"$alpha" "0.5"
+
+	"$bouncecheck" "0.0"
+	"$temp" "0.08"
+	"$temp2" "0.1"
+	"$bouncethreshold" "0.09"
+	"$bounce" "0.0"
+
+	"$sine1" "0"
+	"$sine2" "0"
+	"$offset" "0"
+
+	"Proxies"
+	{
+		"Sine"
+		{
+			"resultVar" "$color[0]"
+			"sineperiod" .1
+			"sinemin" .98
+			"sinemax" 1
+		}
+		"Sine"
+		{
+			"resultVar" "$color[1]"
+			"sineperiod" .1
+			"sinemin" .98
+			"sinemax" 1
+		}
+		"Sine"
+		{
+			"resultVar" "$color[2]"
+			"sineperiod" .1
+			"sinemin" .99
+			"sinemax" 1
+		}
+		"TextureScroll"
+		{
+			"texturescrollvar" "$texture2transform"
+			"texturescrollrate" 1
+			"texturescrollangle" -90
+		}
+
+		EntityRandom
+		{
+			"resultVar" "$offset"
+		}
+		"Sine"
+		{
+			"sineperiod" 0.1
+			"sinemin" 0.025
+			"sinemax" 0.05
+			"resultVar" "$sine1"
+		}
+		"Sine"
+		{
+			"sineperiod" 0.5
+			"sinemin" 0.025
+			"sinemax" 0.05
+			"timeoffset" "$offset"
+			"resultVar" "$sine2"
+		}
+		"Add"
+		{
+			"srcVar1" "$sine1"
+			"srcVar2" "$sine2"
+			"resultVar" "$bouncecheck"
+		}
+		"LessOrEqual"
+		{
+			"lessEqualVar" "$temp2"
+			"greaterVar" "$temp"
+			"srcVar1" "$bouncecheck"
+			"srcVar2" "$bouncethreshold"
+			"resultVar" "$alpha"
+		}
+	}
+}
